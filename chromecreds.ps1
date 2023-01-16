@@ -1,8 +1,11 @@
+
+Write-Output "1"
 $d=Add-Type -A System.Security
+Write-Output "1"
 $p='public static'
-"1"
+Write-Output "1"
 $g=""")]$p extern"
-"2"
+Write-Output"2"
 $i='[DllImport("winsqlite3",EntryPoint="sqlite3_'
 $m="[MarshalAs(UnmanagedType.LP"
 $q='(s,i)'
