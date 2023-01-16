@@ -18,7 +18,7 @@ $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([Convert]::FromBase64String
 for(;!([W]::S($s)%100)){$l+=[W]::T($s,0),[W]::T($s,3)
 $c=[W]::B($s,5)
 try{$e=$u::Unprotect($c,$n,0)}catch{if($x){$k=$c.length
-"1"
+"pos"
 $e=[byte[]]::new($k-31)
 "2"
 $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)}}$l+=($e|%{[char]$_})-join''}
